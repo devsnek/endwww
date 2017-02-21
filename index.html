@@ -16,7 +16,7 @@
   </div>
   <script>
     function replace(key, value) { document.body.innerHTML = document.body.innerHTML.replace(new RegExp(`\{\{${key}\}\}`, 'gi'), value); }
-    const Host = document.location.hostname.replace('www.', '');
+    const Host = document.location.hostname.replace(/^www\./i, '');
     const Port = document.location.port ? `:${document.location.port}` : '';
     const Full = `${document.location.protocol}//${Host}${Port}`;
     replace('FULL', Full);
