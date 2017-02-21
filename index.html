@@ -11,12 +11,12 @@
     <div class=container>
       <h1>are you looking for <br/><code>{{FULL}}</code>?</h1>
       <p><code>{{HOST}}</code> is ending WWW, and you can too!</p>
-      <a href="#">find out how</a>
+      <a href='https://endwww.gus.host/how'>find out how</a>
     </div>
   </div>
   <script>
     function replace(key, value) { document.body.innerHTML = document.body.innerHTML.replace(new RegExp(`\{\{${key}\}\}`, 'gi'), value); }
-    const Host = document.location.hostname.replace(/^www\./i, '');
+    const Host = document.location.hostname.replace('www.', '');
     const Port = document.location.port ? `:${document.location.port}` : '';
     const Full = `${document.location.protocol}//${Host}${Port}`;
     replace('FULL', Full);
